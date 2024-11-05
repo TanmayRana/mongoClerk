@@ -1,8 +1,9 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
-import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
+import { WebhookEvent } from "@clerk/nextjs/server";
 import User from "@/models/user.model";
 import dbConnect from "@/db";
+import { clerkClient } from "@clerk/clerk-sdk-node";
 
 export async function POST(req: Request) {
   await dbConnect();
